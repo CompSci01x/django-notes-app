@@ -1,0 +1,60 @@
+{% extends 'notes/base.html'%}
+
+{% block content %}
+
+    <div class="container-fluid">
+        
+        <div class="container-fluid">
+            <br/>
+            <h3 class="round3" style="text-align:center;">All Notes</h3>
+        </div>
+
+        <div class="container" style="text-align: right;" >
+            <a href="{% url 'notes:create' %}">
+                <button style="margin: 5px;" type="button" class="btn btn-success">
+                    <i class="fas fa-plus"></i>             
+                </button>
+            </a>
+        </div>
+
+        <br/>
+
+        {% for note in note_list %}
+            <div class="container" style="text-align: center;"> 
+                
+                <ul class="list-group" >
+                    
+                    <li class="card" style="display: block; margin: 5px;">
+                        
+                        <a class="insidecard-floatleft" href="{% url 'notes:detail' note.pk %}">
+                            <h5>{{ note.title }}</h5>
+                        </a>
+
+                        <div class="d-flex flex-row-reverse" style="margin-bottom: 5px;">
+                            <a href="{% url 'notes:edit' note.pk %}">
+                                <button type="button" class="btn btn-warning">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="d-flex flex-row-reverse">
+                            <a href="{% url 'notes:delete' note.pk %}" >
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </li> 
+                
+                </ul>    
+
+                <br/>
+            
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>     
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'notes/style.css' %}">
+        <script src="{% static 'notes/jsFile.js' %}"></script>
+
+        <title>Notes App</title>
+
+    </head>
+
+    <body>
+
+        <div class="topnav card">
+            <a href="{% url 'notes:index' %}">
+                <img src="{% static 'notes/palmTree.png' %}" style="width:75px; height:75px;">
+                <p style="color: green;">Home</p>
+            </a>
+        </div>
+
+        <div class="page-container">
+        
+            {% block content %}
+            {% endblock %}
+
+            <footer>
+                <p>2021</p>
+            </footer>
+        
+        </div>
+
+    </body>
+
+</html>

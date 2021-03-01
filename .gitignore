@@ -1,0 +1,25 @@
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+media
+local_settings.py
+
+
+# Environments 
+.env 
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
+
+# Mac OS
+.DS_Store
+
+

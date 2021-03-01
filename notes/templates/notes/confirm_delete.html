@@ -1,0 +1,30 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+    <div class="container">
+        
+        <br/>
+        
+        <form method="post">
+
+            {% csrf_token %}
+            
+            <div class="alert alert-warning">
+                
+                <span style="color: red;">Are you sure you want to delete: </span>
+                "{{ object }}"
+                <span style="color: red;">?</span>
+
+                <div style="text-align: right; margin-top: 5px; margin-right: -10px;">
+                    <button type="submit" class="btn btn-danger">
+                        <span class="fas fa-trash"></span>
+                    </button>
+                </div>
+
+            </div>
+            
+        </form>
+
+    </div>
+
+{% endblock %}
